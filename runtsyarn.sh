@@ -2,4 +2,4 @@
 
 # pass the filename to this script as an argument when calling
 currdir=$(pwd)
-yarn tsc $1.ts --outDir $currdir/js && node $currdir/js/$1.js;
+yarn tsc $currdir/$1.ts --outDir $currdir/js && node $currdir/js/$1.js;
