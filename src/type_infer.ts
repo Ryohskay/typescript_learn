@@ -9,13 +9,20 @@ const upperMsg = msg.toUpperCase();
 //const possible = msg + 2;
 // this is also possible;
 //let number: number = 2;
-//const impossible = msg + number;  // string + number is defined in js, so this can be compiled ...
+//const possible = msg + number;  // string + number is defined in js, so this can be compiled ...
 
 
-// in order to ensure consistency in the code above, you need to define this:
-function concatStringOnly(s1: string, s2: string) {
-	return s1.concat(s2);
+// in order to ensure consistency in the code above,
+// use string.concat()
+let num3 = 3;
+const impossible = "Hello".concat(num3) // This DOES run on JS, never transpiled in TS
+
+
+
+// Or you need to define this:
+function addStringOnly(s1: string, s2: string) {
+	return s1 + s2;
 }
 
-const notTranspiled = concatStringOnly(3, " bananas");
-const transpiled = concatStringOnly("3", " bananas");
+const notTranspiled = addStringOnly(3, " bananas");
+const transpiled = addStringOnly("3", " bananas");
