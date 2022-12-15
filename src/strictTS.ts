@@ -26,9 +26,8 @@ Other useful flags
 let num2 = 2; // implicit type inferring is still possible
 let greeting = "Hello, ";
 
-// not transpiled: `strictFunctionTypes`
-
 /*
+// not transpiled: `strictFunctionTypes`
 function sayHelloTo(s: string) {
 	console.log("Hello, " + s.toLowerCase());
 }
@@ -37,6 +36,18 @@ type strORnumFN = (uncertain: string | number) => void;
 let func: strORnumFN = sayHelloTo; // unsafe as `strORnumFN` type cannot ensure that the arg is of `string` type
 func(3); // unsafe call, crashes
 */
+
+// not transpiled: `strictNullChecks`
+// this prevents exsistence of implicit `undefined` or `null` values in some edge cases
+let locatedCountry = "Canada";
+type country = { name: string, capital: string };
+const germany: country = {name: "Germany", capital: "Berlin"};
+const japan: country = {name: "Japan", capital: "Tokyo"};
+const france: country = {name: "France", capital: "Paris"};
+const countries: country[] = [germany, japan, france];
+
+const foundPlace = countries.find((c: country) => c.name === locatedCountry);  // if no match was found returns `undefined`
+console.log(foundPlace.capital);
 
 // not transpiled: `noImplicitAny`
 //function incrementNum(num2) {
