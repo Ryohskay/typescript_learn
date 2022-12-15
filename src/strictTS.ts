@@ -19,6 +19,25 @@ let greeting = "Hello, ";
 //	num2 += 1;
 //}
 
+// not transpiled: `noImplicitThis`
+//import strictTS from "strictTS";
+class Square {
+	side: number = 1;
+	constructor(sqSide?: number) {
+		if (sqSide !== undefined) {
+			this.side = sqSide;
+		}
+	}
+
+//	getSide(): number {
+//		return implicitThisScope() {
+//			// here inside of implicitThisScope(), `this` is not explicit;
+//			// use function(this) or just `return this.side` instead of lambda
+//			return this.side;
+//		}
+	}
+}
+
 // can be transpiled: `useUnknownInCatchVariables`
 try {
 	console.log("Hello, ".concat("z"));
