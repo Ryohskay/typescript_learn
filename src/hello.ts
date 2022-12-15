@@ -1,4 +1,3 @@
 const message = "Hello World!";
 
-// console.log(message.toLowerCase());
-message();
+console.log(message.toLowerCase());
