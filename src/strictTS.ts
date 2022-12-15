@@ -37,6 +37,7 @@ let func: strORnumFN = sayHelloTo; // unsafe as `strORnumFN` type cannot ensure 
 func(3); // unsafe call, crashes
 */
 
+/* // NEEDS -lib DOM,ES6 compiler option
 // not transpiled: `strictNullChecks`
 // this prevents exsistence of implicit `undefined` or `null` values in some edge cases
 let locatedCountry = "Canada";
@@ -48,6 +49,7 @@ const countries: country[] = [germany, japan, france];
 
 const foundPlace = countries.find((c: country) => c.name === locatedCountry);  // if no match was found returns `undefined`
 console.log(foundPlace.capital);
+*/
 
 // not transpiled: `noImplicitAny`
 //function incrementNum(num2) {
