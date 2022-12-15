@@ -27,6 +27,8 @@ let num2 = 2; // implicit type inferring is still possible
 let greeting = "Hello, ";
 
 // not transpiled: `strictFunctionTypes`
+
+/*
 function sayHelloTo(s: string) {
 	console.log("Hello, " + s.toLowerCase());
 }
@@ -34,6 +36,7 @@ type strORnumFN = (uncertain: string | number) => void;
 
 let func: strORnumFN = sayHelloTo; // unsafe as `strORnumFN` type cannot ensure that the arg is of `string` type
 func(3); // unsafe call, crashes
+*/
 
 // not transpiled: `noImplicitAny`
 //function incrementNum(num2) {
