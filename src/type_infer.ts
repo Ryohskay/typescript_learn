@@ -11,3 +11,9 @@ const upperMsg = msg.toUpperCase();
 //let number: number = 2;
 //const impossible = msg + number;  // string + number is defined in js, so this can be compiled ...
 
+// in order to ensure consistency in the code above, you need to define this:
+function concatStringOnly(s1: string, s2: string) {
+	return s1+s2;
+}
+
+const notTranspiled = concatStringOnly(3, " bananas");
